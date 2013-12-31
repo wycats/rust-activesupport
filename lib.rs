@@ -1,4 +1,5 @@
 #[crate_id = "active_support"];
+#[crate_type="lib"];
 
 extern mod extra;
 use extra::time::Tm;
@@ -6,8 +7,9 @@ use extra::time::now_utc;
 use date::Date;
 pub use time::Time;
 pub use dsl::Period;
-mod date;
-mod time;
+
+pub mod date;
+pub mod time;
 mod dsl;
 
 
