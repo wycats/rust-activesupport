@@ -3,6 +3,7 @@ use extra::time::{Tm};
 use TimeChange;
 
 #[deriving(Clone)]
+#[deriving(Eq)]
 pub struct Date {
   year: int,
   month: uint,
@@ -63,7 +64,7 @@ impl Date {
     let after_this_year = n - remaining_in_year;
 
     if (after_this_year > 0) {
-      let years = after_this_year / 12;
+      let years = after_this_year / 12 + 1;
       let months = after_this_year % 12;
 
       Date::new(self.year + years as int, months, self.day)
